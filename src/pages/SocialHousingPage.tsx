@@ -1,4 +1,4 @@
-import { Building2, Percent, PiggyBank, MapPin, ClipboardList, ArrowRight, TrendingUp } from 'lucide-react'
+import { Building2, Percent, PiggyBank, MapPin, ClipboardList, ArrowRight, TrendingUp, AlertTriangle } from 'lucide-react'
 
 interface HousingSection {
   icon: typeof Building2
@@ -109,6 +109,17 @@ const sections: HousingSection[] = [
       { text: '台北市 4.5 萬戶（18.9%）、新北市 5.2 萬戶（21.8%）為最大供應區' },
       { text: '2026 年新增目標 3 萬戶，其中包租代管 1.5 萬戶、新建社宅 1.5 萬戶' },
       { text: '弱勢族群保障比例：社宅總量 40% 以上優先提供予低收入戶、身心障礙者、老人', highlight: true },
+    ],
+  },
+  {
+    icon: AlertTriangle,
+    title: '社宅政策轉彎與爭議追蹤',
+    subtitle: '2026-05 最新發展｜來源：內政部、監察院、立法院質詢',
+    items: [
+      { text: '新建社宅大砍：原定 8 年新建 13 萬戶，政院 2026 年調整為 4 萬戶，改押包租代管填補缺口。民間質疑包租代管品質難控、租期不穩，恐重蹈 2024 年 3,500 戶退場潮', highlight: true },
+      { text: '包租代管假業者警示：國家住都中心 2026/5 發出警告，部分業者僅掛牌無實際服務，租客簽約後無人代管、修繕無門。呼籲租客查驗業者許可字號與近半年媒合實績', highlight: true },
+      { text: '補助分配爭議：監察院報告揭露五年 150 億租金補貼中六成（約 90 億）實質流向業者與房東，租客反遭漲租。部分房東以「可申請補貼」為由調漲租金，抵銷補貼效果' },
+      { text: '租賃專法修法延宕：政院版《租賃住宅市場發展條例》修正草案逾半年未送立院審議，朝野立委聯合呼籲加速（2026/1/19），至今無進展' },
     ],
   },
 ]
