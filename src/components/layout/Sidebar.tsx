@@ -1,12 +1,11 @@
 import { NavLink } from 'react-router-dom'
-import { Home, Search, Info } from 'lucide-react'
+import { Home, Info } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 export function Sidebar() {
   const links = [
     { to: '/', icon: Home, label: '所有物件' },
-    { to: '/search', icon: Search, label: '進階篩選' },
-    { to: '/about', icon: Info, label: '關於' },
+    { to: '/info', icon: Info, label: '租賃法規' },
   ]
 
   return (
