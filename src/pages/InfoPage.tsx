@@ -1,4 +1,6 @@
 import { Scale, Home, TrendingUp, Shield, FileText, AlertTriangle } from 'lucide-react'
+import { ContentPageHeader } from '@/components/shared/ContentPageHeader'
+import { ContentPageFooter } from '@/components/shared/ContentPageFooter'
 
 interface LawSection {
   icon: typeof Scale
@@ -106,19 +108,13 @@ export function InfoPage() {
   return (
     <div className="max-w-3xl mx-auto space-y-6">
       {/* Header */}
-      <div className="bg-surface border border-amber-primary/20 p-6">
-        <div className="flex items-center gap-3 mb-3">
-          <Scale className="text-amber-primary" size={24} />
-          <div>
-            <h1 className="text-sm font-bold text-amber-primary">租賃條例與政策資訊</h1>
-            <p className="text-text-dim text-[10px]">資料更新：2026-05-22｜來源：內政部、立法院公報</p>
-          </div>
-        </div>
-        <p className="text-text-secondary text-xs leading-relaxed">
-          以下彙整台灣最新租賃相關法規修訂與政策變動，涵蓋租期保障、漲幅限制、租霸處理機制、
-          租金補貼及包租代管等六大面向。租屋族與房東皆應了解自身權益。
-        </p>
-      </div>
+      <ContentPageHeader
+        icon={<Scale size={24} />}
+        title="租賃條例與政策資訊"
+        dateSource="資料更新：2026-05-22｜來源：內政部、立法院公報"
+        description="以下彙整台灣最新租賃相關法規修訂與政策變動，涵蓋租期保障、漲幅限制、租霸處理機制、
+          租金補貼及包租代管等六大面向。租屋族與房東皆應了解自身權益。"
+      />
 
       {/* Law Sections */}
       {lawSections.map((section) => (
@@ -144,14 +140,10 @@ export function InfoPage() {
       ))}
 
       {/* Footer */}
-      <div className="bg-surface border border-border-subtle p-4 text-center">
-        <p className="text-text-dim text-[10px]">
-          ⚠ 以上資訊僅供參考，實際內容以政府公告為準。如有法律問題，請諮詢專業律師。
-        </p>
-        <p className="text-text-dim text-[10px] mt-1">
-          資料來源：內政部地政司、立法院議事公報、行政院公報資訊網
-        </p>
-      </div>
+      <ContentPageFooter
+        disclaimer="⚠ 以上資訊僅供參考，實際內容以政府公告為準。如有法律問題，請諮詢專業律師。"
+        sources="資料來源：內政部地政司、立法院議事公報、行政院公報資訊網"
+      />
     </div>
   )
 }

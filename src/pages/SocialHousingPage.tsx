@@ -1,4 +1,6 @@
 import { Building2, Percent, PiggyBank, MapPin, ClipboardList, ArrowRight, TrendingUp, AlertTriangle } from 'lucide-react'
+import { ContentPageHeader } from '@/components/shared/ContentPageHeader'
+import { ContentPageFooter } from '@/components/shared/ContentPageFooter'
 
 interface HousingSection {
   icon: typeof Building2
@@ -148,19 +150,13 @@ export function SocialHousingPage() {
   return (
     <div className="max-w-3xl mx-auto space-y-6">
       {/* Header */}
-      <div className="bg-surface border border-amber-primary/20 p-6">
-        <div className="flex items-center gap-3 mb-3">
-          <Building2 className="text-amber-primary" size={24} />
-          <div>
-            <h1 className="text-sm font-bold text-amber-primary">社會住宅與包租代管</h1>
-            <p className="text-text-dim text-[10px]">資料更新：2026-05-22｜來源：內政部、財政部、立法院公報</p>
-          </div>
-        </div>
-        <p className="text-text-secondary text-xs leading-relaxed">
-          台灣社會住宅政策雙軌並行：政府直接興建 + 包租代管民間空屋。2026 年目標總量 25 萬戶，
-          其中包租代管占比不低於 50%。以下彙整最新政策、申請資格、稅務優惠與全台分布資訊。
-        </p>
-      </div>
+      <ContentPageHeader
+        icon={<Building2 size={24} />}
+        title="社會住宅與包租代管"
+        dateSource="資料更新：2026-05-22｜來源：內政部、財政部、立法院公報"
+        description="台灣社會住宅政策雙軌並行：政府直接興建 + 包租代管民間空屋。2026 年目標總量 25 萬戶，
+          其中包租代管占比不低於 50%。以下彙整最新政策、申請資格、稅務優惠與全台分布資訊。"
+      />
 
       {/* Distribution Bar Chart */}
       <div className="bg-surface border border-border-subtle p-5">
@@ -296,14 +292,10 @@ export function SocialHousingPage() {
       </div>
 
       {/* Footer */}
-      <div className="bg-surface border border-border-subtle p-4 text-center">
-        <p className="text-text-dim text-[10px]">
-          ⚠ 以上資訊僅供參考，實際內容以政府公告為準
-        </p>
-        <p className="text-text-dim text-[10px] mt-1">
-          資料來源：內政部國土管理署、財政部賦稅署、立法院議事公報、《住宅法》修正草案
-        </p>
-      </div>
+      <ContentPageFooter
+        disclaimer="⚠ 以上資訊僅供參考，實際內容以政府公告為準"
+        sources="資料來源：內政部國土管理署、財政部賦稅署、立法院議事公報、《住宅法》修正草案"
+      />
     </div>
   )
 }
