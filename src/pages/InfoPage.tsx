@@ -111,7 +111,7 @@ export function InfoPage() {
           <Scale className="text-amber-primary" size={24} />
           <div>
             <h1 className="text-sm font-bold text-amber-primary">租賃條例與政策資訊</h1>
-            <p className="text-text-dim text-[10px]">資料更新：2026-05-21｜來源：內政部、立法院公報</p>
+            <p className="text-text-dim text-[10px]">資料更新：2026-05-22｜來源：內政部、立法院公報</p>
           </div>
         </div>
         <p className="text-text-secondary text-xs leading-relaxed">
