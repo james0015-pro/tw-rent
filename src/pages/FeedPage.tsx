@@ -2,10 +2,13 @@ import { useState, useMemo } from 'react'
 import { rentalData } from '@/data/listings'
 import type { Filters, RoomType } from '@/types'
 import { ListingCard } from '@/components/shared/ListingCard'
+import { extractDistrict, getDistricts } from '@/lib/utils'
 
 export function FeedPage() {
+  const districts = useMemo(() => getDistricts(rentalData), [])
   const [filters, setFilters] = useState<Filters>({
     city: '全部',
+    district: '全部',
     minPrice: 0,
     maxPrice: 0,
     roomType: '全部',
@@ -30,6 +33,10 @@ export function FeedPage() {
 
     if (filters.roomType !== '全部') {
       result = result.filter(l => l.type === filters.roomType)
+    }
+
+    if (filters.district !== '全部') {
+      result = result.filter(l => extractDistrict(l.address) === filters.district)
     }
 
     if (filters.minPrice > 0) result = result.filter(l => l.price >= filters.minPrice * 10000)
@@ -66,6 +73,15 @@ export function FeedPage() {
           className="bg-canvas border border-border-default text-text-primary px-2 py-1.5 outline-none font-mono text-xs"
         >
           {roomTypes.map(t => <option key={t} value={t}>{t}</option>)}
+        </select>
+
+        <select
+          value={filters.district}
+          onChange={e => setFilters(f => ({ ...f, district: e.target.value }))}
+          className="bg-canvas border border-border-default text-text-primary px-2 py-1.5 outline-none font-mono text-xs"
+        >
+          <option value="全部">全部區域</option>
+          {districts.map(d => <option key={d} value={d}>{d}</option>)}
         </select>
 
         <div className="flex items-center gap-1">
