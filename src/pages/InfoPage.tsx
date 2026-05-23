@@ -1,4 +1,4 @@
-import { Scale, Home, TrendingUp, Shield, FileText, AlertTriangle } from 'lucide-react'
+import { Scale, Home, TrendingUp, Shield, FileText, AlertTriangle, PiggyBank } from 'lucide-react'
 import { ContentPageHeader } from '@/components/shared/ContentPageHeader'
 import { ContentPageFooter } from '@/components/shared/ContentPageFooter'
 
@@ -53,6 +53,8 @@ const lawSections: LawSection[] = [
       '強制執行範圍：包含租金清償、房屋返還（遷讓）、違約金及損害賠償，不需先打官司',
       '公證費用：依租約總金額級距計算（例如月租 2 萬、租期 3 年 = 72 萬，公證費約 3,000-5,000 元）',
       '修法重點：擴大公證租約適用範圍至所有住宅租賃，簡化公證程序，降低公證費用門檻',
+      '公證公會正式背書（中國時報 2026/5/21）：中華民國公證人公會公開表態支持公證法修法，願配合增訓公證人力（目前全台約 600 位，目標擴增至 1,200 位），解決司法院對人力不足的疑慮',
+      '政策閉環效應：公證租約普及化後，可減少租賃糾紛進入訴訟，降低法院負擔；同時租約透明度提高，閒置空屋更有誘因釋出至租賃市場，形成「公證→保障→釋出」的正向循環',
     ],
   },
   {
@@ -105,6 +107,18 @@ const lawSections: LawSection[] = [
     ],
   },
   {
+    icon: PiggyBank,
+    title: '信託房屋公益出租稅務優惠 — 報稅季節必知',
+    effectiveDate: '2025 年財政部公告 / 2026 年持續適用',
+    content: [
+      '公益出租人稅務優惠：房屋出租給符合租金補貼資格的房客，房東自動成為「公益出租人」，每屋每月租金收入免稅額最高 15,000 元（超過部分再減除 60% 必要費用）',
+      '房屋稅及地價稅適用自用住宅稅率：公益出租人之房屋稅率僅 1.2%（一般出租為 2.4-3.6%），地價稅率 0.2%（一般稅率 1-5.5%），大幅降低持有成本',
+      '信託專戶租金分離課稅：房東可選擇將租金收入透過銀行信託專戶收取，適用 10% 分離課稅（不併入綜合所得稅），避免稅率級距跳升。報稅季（5 月）申報時特別有利',
+      '包租代管額外優惠：加入包租代管的房東，房屋修繕費用可全額列舉扣除（不受一般租賃 43% 必要費用上限限制），且空屋活化另享 3 個月額外租金補貼',
+      '根據《住宅法》第 22 條，公益出租人之稅務優惠不得作為房東漲租理由。房客若因房東申請公益出租而被漲租，可向地方主管機關檢舉（罰鍰 3-30 萬元）',
+    ],
+  },
+  {
     icon: TrendingUp,
     title: '台北租屋市場現況 — 捷運套房全破萬',
     effectiveDate: '2026-05-22 更新｜來源：工商時報、租賃公會',
@@ -125,7 +139,7 @@ export function InfoPage() {
       <ContentPageHeader
         icon={<Scale size={24} />}
         title="租賃條例與政策資訊"
-        dateSource="資料更新：2026-05-22｜來源：內政部、立法院公報"
+        dateSource="資料更新：2026-05-23｜來源：內政部、立法院公報"
         description="以下彙整台灣最新租賃相關法規修訂與政策變動，涵蓋租期保障、漲幅限制、租霸處理機制、
           租金補貼及包租代管等六大面向。租屋族與房東皆應了解自身權益。"
       />
